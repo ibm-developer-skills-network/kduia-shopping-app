@@ -1,25 +1,25 @@
 import React, { useContext } from 'react';
-import ExpenseItem from './ExpenseItem';
 import { AppContext } from '../context/AppContext';
-const ExpenseList = () => {
-    const { expenses } = useContext(AppContext);
+import { FaTimesCircle } from 'react-icons/fa';
+const ExpenseItem = (props) => {
+    const { dispatch, Location} = useContext(AppContext);
+    const handleDeleteItem = () => {
+        const item = {
+            name: props.name,
+        };
+        dispatch({
+            type: 'DELETE_ITEM',
+            payload: item,
+        });
+    };
     return (
-        <table className='table'>
-              <thead className="thead-light">
-            <tr>
-              <th scope="col">Items</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Unit Price</th>
-              <th scope="col">Items Price</th>
-              <th scope="col">Remove</th>
-            </tr>
-          </thead>
-            <tbody>
-            {expenses.map((expense) => (
-                <ExpenseItem id={expense.id} key={expense.id} name={expense.name} quantity={expense.quantity} unitprice={expense.unitprice} />
-            ))}
-            </tbody>
-        </table>
+        <tr>
+        <td>{props.name}</td>
+        <td>{props.quantity}</td>
+        <td>{Location}{parseInt(props.unitprice)}</td>
+        <td>{Location}{parseInt(props.quantity)*parseInt(props.unitprice)}</td>
+        <td><FaTimesCircle size='2.2em' color="red" onClick={handleDeleteItem}></FaTimesCircle></td>
+        </tr>
     );
 };
-export default ExpenseList;
+export default ExpenseItem;
