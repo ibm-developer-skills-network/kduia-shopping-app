@@ -22,6 +22,7 @@ const Location = () => {
       </select>	
       }	
     </div>
+    
     );
 };
 
