@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -31,6 +31,15 @@
     --bs-btn-bg: #badbcc!important;
 }
 
+.columns-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.columns {
+    width: 48%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,4 +47,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.item {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+#spacing {
+    margin-top: 1%;
 }
