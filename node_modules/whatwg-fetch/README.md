@@ -64,14 +64,11 @@ As an alternative to using npm, you can obtain `fetch.umd.js` from the
 [Releases][] section. The UMD distribution is compatible with AMD and CommonJS
 module loaders, as well as loading directly into a page via `<script>` tag.
 
-You will also need a Promise polyfill for [older browsers](http://caniuse.com/#feat=promises).
+You will also need a Promise polyfill for [older browsers](https://caniuse.com/promises).
 We recommend [taylorhakes/promise-polyfill](https://github.com/taylorhakes/promise-polyfill)
 for its small size and Promises/A+ compatibility.
 
 ## Usage
-
-For a more comprehensive API reference that this polyfill supports, refer to
-https://github.github.io/fetch/.
 
 ### Importing
 
@@ -193,7 +190,7 @@ fetch('/avatars', {
 
 * Not all Fetch standard options are supported in this polyfill. For instance,
   [`redirect`](#redirect-modes) and
-  [`cache`](https://github.github.io/fetch/#caveats) directives are ignored.
+  `cache` directives are ignored.
   
 * `keepalive` is not supported because it would involve making a synchronous XHR, which is something this project is not willing to do. See [issue #700](https://github.com/github/fetch/issues/700#issuecomment-484188326) for more information.
 

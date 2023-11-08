@@ -53,6 +53,12 @@ export const AppReducer = (state, action) => {
             return {
                 ...state
             }
+    case 'addProduct':
+        
+        action.type = "DONE"
+        return {
+            ...state
+        }
 
         default:
             return state;
